@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <!--Buttons and other event system uses event-set component and proxy events -->
+<script src="https://unpkg.com/aframe-event-set-component@^4.0.0/dist/aframe-event-set-component.min.js"></script> 
+<script src="https://unpkg.com/aframe-troika-text/dist/aframe-troika-text.min.js"></script>
+
+
+  </head>
+  <body>
+    <a-scene background="color: #333936">
+      
+        <a-assets>
+    <a-asset-item id="carved1" src="https://cdn.glitch.me/133bdaf8-b788-404d-acc1-1768ec8bf0ca%2Fpumpkin1carved.glb?v=1635525943476"></a-asset-item>
+          <a-asset-item id="carved2" src="https://cdn.glitch.me/133bdaf8-b788-404d-acc1-1768ec8bf0ca%2Fpumpkin2carved.glb?v=1635525943556"></a-asset-item>
+          <a-asset-item id="carved3" src="https://cdn.glitch.me/133bdaf8-b788-404d-acc1-1768ec8bf0ca%2Fpumpkin3carved.glb?v=1635525943576"></a-asset-item>
+          <a-asset-item id="carved4" src="https://cdn.glitch.me/133bdaf8-b788-404d-acc1-1768ec8bf0ca%2Fpumpkin4carved.glb?v=1635525943306"></a-asset-item>
+          <a-asset-item id="carved5" src="https://cdn.glitch.me/133bdaf8-b788-404d-acc1-1768ec8bf0ca%2Fpumpkin5carved.glb?v=1635525943307"></a-asset-item>
+          <a-asset-item id="uncarved1" src="https://cdn.glitch.me/133bdaf8-b788-404d-acc1-1768ec8bf0ca%2Fpumpkin1uncarved.glb?v=1635525943502"></a-asset-item>
+          <a-asset-item id="uncarved2" src="https://cdn.glitch.me/133bdaf8-b788-404d-acc1-1768ec8bf0ca%2Fpumpkin2uncarved.glb?v=1635525943595"></a-asset-item>
+          <a-asset-item id="uncarved3" src="https://cdn.glitch.me/133bdaf8-b788-404d-acc1-1768ec8bf0ca%2Fpumpkin3uncarved.glb?v=1635525943535"></a-asset-item>
+          <a-asset-item id="uncarved4" src="https://cdn.glitch.me/133bdaf8-b788-404d-acc1-1768ec8bf0ca%2Fpumpkin4uncarved.glb?v=1635525943307"></a-asset-item>
+          <a-asset-item id="uncarved5" src="https://cdn.glitch.me/133bdaf8-b788-404d-acc1-1768ec8bf0ca%2Fpumpkin5uncarved.glb?v=1635525943393"></a-asset-item>
+          <a-asset-item id="spookytree" src="https://cdn.glitch.me/133bdaf8-b788-404d-acc1-1768ec8bf0ca%2Funtexturedspooky.glb?v=1635530157949"></a-asset-item>
+
+  </a-assets>
+      
+            <a-entity id="rig" position="0 1 0" rotation="0 0 0" >
+    <a-entity id="eyes"
+              camera="fov: 80"
+              look-controls="enabled:  false;  mouseEnabled:  false"
+              position=""
+              rotation=""
+              raycaster="objects: .mouse; direction: -24 -3 0;" cursor="rayOrigin: mouse"
+              static-body="shape: sphere; sphereRadius: 0.001">
+      </a-entity>
+    </a-entity>  
+      
+      <a-entity id="PatriciaPumpkin1Group" position="-1.25 0 0">
+        <a-entity id="Pumpkin1Patricia" 
+                  class="mouse" 
+                  gltf-model="#carved1" 
+                  scale="0.5 0.5 0.5" 
+                  rotation="0 -90 0" 
+                  position="2.02198 0.42545 -4.42142"></a-entity>
+      
+       <a-entity id="Pumpkin1PatriciaUncarve" 
+                  class="mouse" 
+                  gltf-model="#uncarved1" 
+                  scale="0.52 0.52 0.52" 
+                 rotation="0 -90 0" 
+                 position="2.16354 0.42545 -0.6482"
+              event-set__carvepumpkin1= "
+                _event : click;
+                _target : #Pumpkin1PatriciaUncarve;
+                animation.property : visible;
+                animation.to: false;"
+                  ></a-entity>
+        </a-entity>
+      
+            <a-entity id="PerryPumpkin2Group" position="-1.832 0 0">
+        <a-entity id="Pumpkin2Perry" 
+                  class="mouse" 
+                  gltf-model="#carved2" 
+                  scale="0.5 0.5 0.5" 
+                  rotation="0 -90 0" 
+                  position="2.02198 0.42545 -4.42142"></a-entity>
+      
+       <a-entity id="Pumpkin2PerryUncarve" 
+                  class="mouse" 
+                  gltf-model="#uncarved2" 
+                  scale="0.52 0.52 0.52" 
+                 rotation="0 -90 0" 
+                 position="2.10165 0.42545 -0.6482"
+              event-set__carvepumpkin2= "
+                _event : click;
+                _target : #Pumpkin2PerryUncarve;
+                animation.property : visible;
+                animation.to: false;"
+                  ></a-entity>
+        </a-entity>
+      
+                  <a-entity id="PacoPumpkin3Group" position="-2.39 0 0">
+        <a-entity id="Pumpkin3Paco" 
+                  class="mouse" 
+                  gltf-model="#carved3" 
+                  scale="0.5 0.5 0.5" 
+                  rotation="0 -90 0" 
+                  position="2.02198 0.42545 -4.42142"></a-entity>
+      
+       <a-entity id="Pumpkin3PacoUncarve" 
+                  class="mouse" 
+                  gltf-model="#uncarved3" 
+                  scale="0.52 0.52 0.52" 
+                 rotation="0 -90 0" 
+                 position="2.04331 0.42545 -0.6482"
+              event-set__carvepumpkin3= "
+                _event : click;
+                _target : #Pumpkin3PacoUncarve;
+                animation.property : visible;
+                animation.to: false;"
+                  ></a-entity>
+        </a-entity>
+      
+                  <a-entity id="PiperPumpkin4Group" position="-2.955 0 0">
+        <a-entity id="Pumpkin4Piper" 
+                  class="mouse" 
+                  gltf-model="#carved4" 
+                  scale="0.5 0.5 0.5" 
+                  rotation="0 -90 0" 
+                  position="2.02198 0.42545 -4.42142"></a-entity>
+      
+       <a-entity id="Pumpkin4PiperUncarve" 
+                  class="mouse" 
+                  gltf-model="#uncarved4" 
+                  scale="0.52 0.52 0.52" 
+                 rotation="0 -90 0" 
+                 position="1.959 0.42545 -0.6482"
+              event-set__carvepumpkin4= "
+                _event : click;
+                _target : #Pumpkin4PiperUncarve;
+                animation.property : visible;
+                animation.to: false;"
+                  ></a-entity>
+        </a-entity>
+      
+                  <a-entity id="PadmePumpkin5Group" position="-3.48 0 0">
+        <a-entity id="Pumpkin5Padme" 
+                  class="mouse" 
+                  gltf-model="#carved5" 
+                  scale="0.5 0.5 0.5" 
+                  rotation="0 -90 0" 
+                  position="2.02198 0.42545 -4.42142"></a-entity>
+      
+       <a-entity id="Pumpkin5PadmeUncarve" 
+                  class="mouse" 
+                  gltf-model="#uncarved5" 
+                  scale="0.52 0.52 0.52" 
+                 rotation="0 -90 0" 
+                 position="1.878 0.42545 -0.6482"
+              event-set__carvepumpkin5= "
+                _event : click;
+                _target : #Pumpkin5PadmeUncarve;
+                animation.property : visible;
+                animation.to: false;"
+                  ></a-entity>
+        </a-entity>
+      
+       <a-entity id="spookedtree1" 
+                  gltf-model="#spookytree" 
+                  scale="1 1 1" 
+                  rotation="0 0 0" 
+                  position="-13 0 -17"></a-entity>
+             <a-entity id="spookedtree2" 
+                  gltf-model="#spookytree" 
+                  scale="1 1 1" 
+                  rotation="0 0 0" 
+                  position="11 0 -15"></a-entity>
+             <a-entity id="spookedtree3" 
+                  gltf-model="#spookytree" 
+                  scale="1 1 1" 
+                  rotation="0 0 0" 
+                  position="6 0 -21"></a-entity>
+      
+      <a-plane position="0 0 -4" rotation="-90 0 0" width="40" height="40" color="#BABAB5"></a-plane>
+    </a-scene>
+  </body>
+</html>
